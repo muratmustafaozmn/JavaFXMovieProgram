@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.a1java.MovieController" spacing="10" style="-fx-padding: 10;">
+
+  <!-- Left side: ListView for displaying movie titles -->
+  <ListView fx:id="movieListView" prefWidth="300" />
+
+  <!-- Right side: Movie details and form for CRUD operations -->
+  <VBox spacing="10" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+    <!-- Image for the movie poster -->
+    <ImageView fx:id="posterImageView" fitWidth="300" fitHeight="450" preserveRatio="true" />
+
+    <!-- Movie title and rating labels for display -->
+    <Label fx:id="titleLabel" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+    <Label fx:id="ratingLabel" />
+
+    <!-- Fields for adding/updating movie details -->
+    <TextField fx:id="titleField" promptText="Title" />
+    <TextField fx:id="ratingField" promptText="IMDb Rating" />
+    <TextField fx:id="posterUrlField" promptText="Poster URL" />
+    <TextArea fx:id="descriptionField" promptText="Description" wrapText="true" editable="true" prefHeight="100" />
+
+    <!-- Buttons for performing CRUD operations -->
+    <Button fx:id="addButton" text="Add Movie" onAction="#addMovie" />
+    <Button fx:id="updateButton" text="Update Movie" onAction="#updateMovie" />
+    <Button fx:id="deleteButton" text="Delete Movie" onAction="#deleteMovie" />
+  </VBox>
+</HBox>
